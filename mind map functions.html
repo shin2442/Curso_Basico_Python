@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Cubic Functions Mind Map</title>
+  <script type="module">
+    import MindElixir from 'https://cdn.jsdelivr.net/npm/mind-elixir@0.8.3/dist/mind-elixir.esm.js';
+
+    const options = {
+      el: '#map',
+      direction: MindElixir.LEFT,
+      draggable: true,
+      contextMenu: true,
+      toolBar: true,
+      nodeMenu: true,
+      keypress: true,
+    };
+
+    const data = {
+      nodeData: {
+        id: 'root',
+        topic: 'Cubic Functions',
+        children: [
+          {
+            topic: 'Definition & Characteristics',
+            children: [
+              { topic: 'Cubic: Degree 3 polynomial' },
+              { topic: 'Can have up to 3 real roots' },
+              { topic: 'Inflection point (curve direction changes)' },
+              { topic: 'General sketch',
+                children: [
+                  { topic: 'f(x) = x^3',
+                    children: [
+                      { topic: 'Shape: S-curve through origin' },
+                      { topic: 'Other shapes: One bump or two bumps' },
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            topic: 'General Form',
+            children: [
+              { topic: 'f(x) = ax³ + bx² + cx + d' },
+              { topic: 'a: affects steepness and direction' },
+              { topic: 'b: controls curvature near origin' },
+              { topic: 'c: affects slope at origin' },
+              { topic: 'd: vertical shift (y-intercept)' },
+            ]
+          },
+          {
+            topic: 'Symmetry & End Behavior',
+            children: [
+              { topic: 'Odd Function → Symmetric about origin' },
+              { topic: 'Even (rare): When b & d = 0' },
+              { topic: 'End behavior:
+ - a > 0 → f(x) → ∞ as x → ∞
+ - a < 0 → f(x) → -∞ as x → ∞' },
+              { topic: 'Example: f(x) = x³ - 3x' },
+            ]
+          },
+          {
+            topic: 'Intercepts',
+            children: [
+              { topic: 'Y-intercept: f(0) = d' },
+              { topic: 'X-intercepts: Set f(x) = 0, solve roots' },
+              { topic: 'Can have 1 or 3 real roots' },
+            ]
+          },
+          {
+            topic: 'Real Life Applications',
+            children: [
+              { topic: 'Engineering: Beam bending under load' },
+              { topic: 'Economics: Profit modeling with supply/demand' },
+              { topic: 'Physics: Projectile paths with air resistance' },
+              { topic: 'Biology: Modeling population growth with tipping points' },
+            ]
+          },
+        ]
+      }
+    };
+
+    const mind = new MindElixir(options);
+    mind.init(data);
+  </script>
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+    }
+    #map {
+      height: 100vh;
+    }
+  </style>
+</head>
+<body>
+  <div id="map"></div>
+</body>
+</html>
